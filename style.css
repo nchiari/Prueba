@@ -11,6 +11,9 @@ body {
 h1 {
     color: #333;
     text-align: center;
+    position: absolute;
+    top: 10px;
+    width: 100%;
 }
 
 .memory-game {
@@ -20,6 +23,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    position: relative;
+    top: 60px;
 }
 
 .memory-card {
@@ -27,6 +32,12 @@ h1 {
     aspect-ratio: 1;
     position: relative;
     cursor: pointer;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
 }
 
 .front-face, .back-face {
@@ -34,8 +45,6 @@ h1 {
     height: 100%;
     position: absolute;
     border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,6 +54,7 @@ h1 {
 }
 
 .front-face {
+    background: #fefefe;
     transform: rotateY(180deg);
 }
 
@@ -53,5 +63,5 @@ h1 {
 }
 
 .memory-card.flip .back-face {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
 }
