@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <div class="front-face"></div>
                 <div class="back-face">${icon}</div>`;
-
             card.addEventListener('click', flipCard);
             game.appendChild(card);
         });
@@ -33,19 +32,3 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkForMatch() {
         const cards = document.querySelectorAll('.memory-card');
         const firstCard = cardsChosenIds[0];
-        const secondCard = cardsChosenIds[1];
-
-        if (cardsChosen[0] === cardsChosen[1] && firstCard !== secondCard) {
-            alert('¡Encontraste un par!');
-            cards[firstCard].style.pointerEvents = 'none';
-            cards[secondCard].style.pointerEvents = 'none';
-        } else {
-            cards[firstCard].classList.remove('flip');
-            cards[secondCard].classList.remove('flip');
-        }
-        cardsChosen = [];
-        cardsChosenIds = [];
-    }
-
-    createBoard();
-});
